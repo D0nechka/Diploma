@@ -1,6 +1,7 @@
 :root {
     // Цвета текста
     --color-font-primary: #1ed760;
+    --color-font-dark-primary: #156732;
     --color-font-dark: #222326;
     --color-font-light: #fff;
     --color-font-gray: #a7a7a7;
@@ -35,5 +36,11 @@
     --font-m: 16px;
     --font-l: 18px;
     --font-xl: 20px;
-    --font-xxs: 22px;
+    --font-xxl: 22px;
+    --font-xxxl: 24px;
+    --font-xxxxl: 32px;
+
+    --font-5xl: 36px;
+    --font-6xl: 48px;
+    --font-7xl: 56px;
 }

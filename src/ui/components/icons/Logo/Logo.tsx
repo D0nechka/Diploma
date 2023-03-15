@@ -5,6 +5,7 @@ type LogoProps = SvgPropsSquare
 export const Logo = ({
     size = 64,
     color = '#1ed760',
+    className,
 }: LogoProps) => {
     return (
         <svg
@@ -13,6 +14,7 @@ export const Logo = ({
             width={`${size}px`}
             height={`${size}px`}
             fill={color}
+            className={className}
         >
             <path
                 // eslint-disable-next-line max-len

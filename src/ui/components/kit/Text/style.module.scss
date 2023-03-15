@@ -1,0 +1,30 @@
+.text {
+    color: var(--color-font-gray);
+}
+
+.primary {
+    color: var(--color-font-primary);
+}
+
+.dark {
+    color: var(--color-font-dark);
+}
+
+.light {
+    color: var(--color-font-light);
+}
+
+.s {
+    font-size: var(--font-s);
+    line-height: var(--font-m);
+}
+
+.m {
+    font-size: var(--font-m);
+    line-height: var(--font-l);
+}
+
+.l {
+    font-size: var(--font-l);
+    line-height: var(--font-xl);
+}

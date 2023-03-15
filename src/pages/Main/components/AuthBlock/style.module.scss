@@ -1,0 +1,53 @@
+.welcome {
+    display: flex;
+    margin-left: 600px;
+    flex-direction: column;
+    margin-bottom: 200px;
+    align-items: center;
+    width: 600px;
+    background: var(--background-tinted-highlight);
+    padding: 50px 20px;
+    border-radius: 10px;
+}
+
+.welcomeText {
+    font-size: var(--font-5xl);
+    line-height: var(--font-6xl);
+    text-align: center;
+}
+
+.describe {
+    margin-top: 20px;
+    font-size: var(--font-xxxl);
+    line-height: var(--font-xxxxl);
+    text-align: center;
+}
+
+.btns {
+    display: flex;
+    margin-top: 30px;
+}
+
+.regBtn {
+    margin-left: 20px;
+    padding: 10px 20px;
+
+    svg {
+        font-size: var(--font-xl);
+        margin-left: 5px;
+    }
+}
+
+.authBtn {
+    padding: 10px 20px;
+
+    svg {
+        font-size: var(--font-xxl);
+        margin-left: 5px;
+    }
+}
+
+.warn {
+    font-size: var(--font-l);
+    color: var(--color-font-negative)
+}

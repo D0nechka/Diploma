@@ -1,0 +1,53 @@
+.input {
+    outline: none;
+    background: none;
+    border: none;
+    font-size: var(--font-m);
+    line-height: var(--font-l);
+    padding: 5px 10px;
+
+    :focus {
+        outline: none;
+        border: none;
+    }
+}
+
+.primary {
+    border: 2px solid var(--color-font-primary);
+    color: var(--color-font-primary);
+}
+
+.outline {
+    color: var(--color-font-primary);
+}
+
+.bottomLine {
+    border-bottom: 2px solid var(--color-font-primary);
+    color: var(--color-font-primary);
+}
+
+.inputContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.iconSearch {
+    position: absolute;
+    top: 5px;
+    font-size: var(--font-l);
+    color: var(--color-font-primary);
+}
+
+.search {
+    padding-left: 25px;
+}
+
+.label {
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.labelSearch {
+    padding-left: 25px;
+}

@@ -1,0 +1,33 @@
+.main {
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    position: relative;
+    background: var(--background-base);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.img {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: blur(4px);
+    z-index: -1;    
+}
+
+.logo {
+    transform: rotate(-20deg);
+    opacity: .7;
+    position: absolute;
+    top: 80px;
+    left: 150px;
+}
