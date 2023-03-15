@@ -1,0 +1,39 @@
+:root {
+    // Цвета текста
+    --color-font-primary: #1ed760;
+    --color-font-dark: #222326;
+    --color-font-light: #fff;
+    --color-font-gray: #a7a7a7;
+    --color-font-negative: #f15e6c;
+    --color-font-warning: #ffa42b;
+    --color-font-announcement: #3d91f4;
+    --color-font-subdued: #727272;
+    --color-font-negative: #e91429;
+    --color-font-warning: #ffa42b;
+    --color-font-announcement: #0d72ea;
+
+    
+    // Цвета заднего фона
+    --background-base: #121212;
+    --background-highlight: #1a1a1a;
+    --background-white: #fff;
+    --background-press: #000;
+    --background-elevated-base: #242424;
+    --background-elevated-highlight: #2a2a2a;
+    --background-tinted-base: hsla(0,0%,100%,.07);
+    --background-tinted-highlight: hsla(0,0%,100%,.1);
+    --background-tinted-press: hsla(0,0%,100%,.04);
+    --background-unsafe-for-small-text-base: #121212;
+
+    // Шрифты
+    --font-family: spotify-circular, Helvetica, Arial, sans-serif;
+
+    // Размеры шрифтов
+    --font-xxs: 10px;
+    --font-xs: 12px;
+    --font-s: 14px;
+    --font-m: 16px;
+    --font-l: 18px;
+    --font-xl: 20px;
+    --font-xxs: 22px;
+}
