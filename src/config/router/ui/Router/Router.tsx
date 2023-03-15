@@ -1,5 +1,5 @@
-import { Route, Routes } from 'react-router-dom'
-import { publicRoutes } from '../const'
+import { Route, Routes } from 'react-router-dom';
+import { publicRoutes } from '../const';
 
 export const Router = () => (
     <Routes>
@@ -7,4 +7,4 @@ export const Router = () => (
             <Route key={path} path={path} element={<Element />} />
         ))}
     </Routes>
-)
+);

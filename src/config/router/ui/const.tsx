@@ -6,6 +6,6 @@ export const publicRoutes: Record<PublicRouterPaths, RouteItem> = {
         path: PublicRouterPaths.MAIN,
         Element: Main,
     },
-}
+};
 
-export const privateRoute: Record<PrivateRouterPaths, RouteItem> = {}
+export const privateRoute: Record<PrivateRouterPaths, RouteItem> = {};
