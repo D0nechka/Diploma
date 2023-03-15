@@ -22,7 +22,7 @@
     "rules": {
         "react/react-in-jsx-scope": "off",
         "indent": ["error", 4],
-        "key-spacing": ["error", { "align": "value" }],
+        "key-spacing": ["error"],
         "no-multi-spaces": ["error", { "ignoreEOLComments": true }],
         "no-trailing-spaces": ["error", { "ignoreComments": true }],
         "no-multiple-empty-lines": ["error", { "max": 1 }],
