@@ -40,9 +40,7 @@ export const Input = (props: InputProps) => {
     };
 
     return (
-        <div
-            className={classNames(cls.container)}
-        >
+        <>
             {labelText?.length && (
                 <Text
                     className={classNames(cls.label, {
@@ -65,6 +63,6 @@ export const Input = (props: InputProps) => {
                     {...otherProps}
                 />
             </div>
-        </div>
+        </>
     );
 };
