@@ -40,7 +40,7 @@ export const Input = (props: InputProps) => {
     };
 
     return (
-        <div>
+        <>
             {labelText?.length && (
                 <Text
                     className={classNames(cls.label, {
@@ -63,6 +63,6 @@ export const Input = (props: InputProps) => {
                     {...otherProps}
                 />
             </div>
-        </div>
+        </>
     );
 };
