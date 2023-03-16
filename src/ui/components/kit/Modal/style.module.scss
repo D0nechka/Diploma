@@ -1,0 +1,25 @@
+.modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--background-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalWrapper {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: var(--background-white);
+    position: relative;
+}
+
+.closeIcon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}

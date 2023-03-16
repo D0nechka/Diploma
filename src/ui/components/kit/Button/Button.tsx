@@ -25,12 +25,16 @@ export const Button = (props: ButtonProps) => {
         children,
         btnType = ButtonType.PRIMARY,
         btnSize = ButtonSize.M,
+        disabled,
         ...otherProps
     } = props;
 
     return (
         <button
-            className={classNames(cls.btn, {}, className, cls[btnType], cls[btnSize])}
+            className={classNames(cls.btn, {
+                [cls.disabled]: disabled,
+            }, className, cls[btnType], cls[btnSize])}
+            disabled={disabled}
             {...otherProps}
         >
             {children}

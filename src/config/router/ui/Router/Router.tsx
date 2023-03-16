@@ -1,10 +1,17 @@
+import { USER_LOCALSTORAGE_KEY } from 'config/const/localStorage';
 import { Route, Routes } from 'react-router-dom';
-import { publicRoutes } from '../const';
+import { publicRoutes, privateRoutes } from '../const';
 
 export const Router = () => (
     <Routes>
-        {Object.values(publicRoutes).map(({ path, Element, }) => (
-            <Route key={path} path={path} element={<Element />} />
-        ))}
+        {localStorage.getItem(USER_LOCALSTORAGE_KEY) ? (
+            Object.values(privateRoutes).map(({ path, Element, }) => (
+                <Route key={path} path={path} element={<Element />} />
+            ))
+        ) : (
+            Object.values(publicRoutes).map(({ path, Element, }) => (
+                <Route key={path} path={path} element={<Element />} />
+            ))
+        )}
     </Routes>
 );

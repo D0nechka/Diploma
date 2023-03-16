@@ -1,4 +1,4 @@
-import { Main } from 'pages';
+import { Main, PrivateMain } from 'pages';
 import { PublicRouterPaths, PrivateRouterPaths, RouteItem } from './types';
 
 export const publicRoutes: Record<PublicRouterPaths, RouteItem> = {
@@ -8,4 +8,9 @@ export const publicRoutes: Record<PublicRouterPaths, RouteItem> = {
     },
 };
 
-export const privateRoute: Record<PrivateRouterPaths, RouteItem> = {};
+export const privateRoutes: Record<PrivateRouterPaths, RouteItem> = {
+    [PrivateRouterPaths.PRIVATE_MAIN]: {
+        path: PrivateRouterPaths.PRIVATE_MAIN,
+        Element: PrivateMain,
+    },
+};

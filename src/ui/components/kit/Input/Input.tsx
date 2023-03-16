@@ -10,7 +10,7 @@ export enum InputType {
     BOTTOM_LINE = 'bottomLine'
 }
 
-type HTMLInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'>
+type HTMLInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onChange'>
 
 interface InputProps extends HTMLInputProps {
    inputType?: InputType;
@@ -19,6 +19,7 @@ interface InputProps extends HTMLInputProps {
    labelSize?: TextSize;
    labelType?: TextType;
    onChange?: (value: string) => void;
+   classNameContainer?: string;
 }
 
 export const Input = (props: InputProps) => {
@@ -30,6 +31,7 @@ export const Input = (props: InputProps) => {
         labelSize,
         labelType,
         onChange,
+        classNameContainer,
         ...otherProps
     } = props;
 
@@ -40,7 +42,9 @@ export const Input = (props: InputProps) => {
     };
 
     return (
-        <>
+        <div
+            className={classNames(cls.container, classNameContainer)}
+        >
             {labelText?.length && (
                 <Text
                     className={classNames(cls.label, {
@@ -63,6 +67,6 @@ export const Input = (props: InputProps) => {
                     {...otherProps}
                 />
             </div>
-        </>
+        </div>
     );
 };

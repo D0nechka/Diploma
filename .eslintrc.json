@@ -30,6 +30,7 @@
         "object-shorthand": ["error"],
         "array-bracket-spacing":["error","always"],
 		"object-curly-spacing":["error","always"],
+        "@typescript-eslint/no-explicit-any": "off",
 		"comma-dangle": ["error", {
 			"objects": "always"
 		}],

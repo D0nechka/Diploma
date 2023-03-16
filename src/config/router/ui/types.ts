@@ -5,6 +5,7 @@ export enum PublicRouterPaths {
 }
 
 export enum PrivateRouterPaths {
+    PRIVATE_MAIN = '/'
 }
 
 export type RouteItem = {
