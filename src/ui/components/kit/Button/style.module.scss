@@ -35,3 +35,8 @@
     background: var(--color-font-primary);
     color: var(--color-font-light);
 }
+
+.disabled {
+    opacity: 0.5;
+    cursor: default;
+}

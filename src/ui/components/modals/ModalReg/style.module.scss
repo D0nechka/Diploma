@@ -1,0 +1,63 @@
+.modalAuth {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 500px;
+    height: 300px;
+}
+
+.title {
+    font-size: var(--font-xxxl);
+}
+
+.blockInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.inputEmail {
+    width: 100%;
+}
+
+.inputPassword {
+    width: 100%;
+}
+
+.inputEmailContainer {
+    margin-top: 20px;
+}
+
+.inputPasswordContainer {
+    margin-top: 30px;
+}
+
+.btnsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: auto;
+}
+
+.btnAuth {
+    margin-left: 20px;
+}
+
+.icon {
+    color: var(--color-font-primary);
+    font-size: var(--font-xl);
+}
+
+.modal {
+    background: var(--background-modal-wrapper);
+}
+
+.error {
+    color: var(--color-font-negative);
+    margin-top: 10px;
+    position: absolute;
+    top: 50px;
+}
