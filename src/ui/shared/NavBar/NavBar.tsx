@@ -5,8 +5,8 @@ import { getUserRoles } from 'store/slices/userSlice/userSlice';
 import { Button } from 'ui/components/kit';
 import { HeaderNavbar, Links } from './components';
 import { adminLinks, userLinks } from './const';
-import cls from './style.module.scss';
 import { GlobalTypeLinks } from './types';
+import cls from './style.module.scss';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import classNames from 'classnames';
 
@@ -28,8 +28,6 @@ export const Navbar = () => {
             setCurrentLinks(userLinks);
         }
     }, [ roles, isAdmin ]);
-
-    console.log(Object.entries(currentLinks ?? {}));
 
     return (
         <div className={classNames(cls.navContainer, {

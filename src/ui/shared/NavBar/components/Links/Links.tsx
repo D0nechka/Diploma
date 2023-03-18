@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { Text } from 'ui/components/kit';
-import { GlobalTypeLinks } from '../../types';
 import cls from './style.module.scss';
 import classNames from 'classnames';
+import { GlobalTypeLinks } from '../../types';
 
 interface LinksProps {
     currentLinks: GlobalTypeLinks | null;
