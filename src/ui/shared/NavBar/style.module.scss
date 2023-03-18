@@ -1,0 +1,28 @@
+.navContainer{
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--background-elevated-base);
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    transition: width 100ms;
+}
+
+.wrapperContainer {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.hideBtn {
+    position: absolute;
+    top: 0;
+    right: -34px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.hideNavbar {
+    width: 80px;
+}
