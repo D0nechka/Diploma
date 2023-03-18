@@ -1,6 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { counterReducer } from './counterSlice/counterSlice';
 import { loginReducer } from './loginSlice/loginSlice';
+import { musicReducer } from './musicSlice/musicSlice';
 import { navbarReducer } from './navbarSlice/navbarSlice';
 import { regReducer } from './regSlice/regSlice';
 import { userReducer } from './userSlice/userSlice';
@@ -11,6 +12,7 @@ export const rootReducer = combineReducers({
     login: loginReducer,
     reg: regReducer,
     navbar: navbarReducer,
+    music: musicReducer,
 });
 
 export * from './counterSlice/counterSlice';

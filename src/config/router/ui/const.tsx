@@ -1,4 +1,4 @@
-import { Main, PrivateMain } from 'pages';
+import { Main, Music, PrivateMain } from 'pages';
 import { PublicRouterPaths, PrivateRouterPaths, RouteItem, AdminRouterPaths } from './types';
 
 export const publicRoutes: Record<PublicRouterPaths, RouteItem> = {
@@ -19,7 +19,7 @@ export const privateRoutes: Record<PrivateRouterPaths, RouteItem> = {
     },
     [PrivateRouterPaths.MUSIC]: {
         path: PrivateRouterPaths.MUSIC,
-        Element: PrivateMain,
+        Element: Music,
     },
     [PrivateRouterPaths.ARTISTS]: {
         path: PrivateRouterPaths.ARTISTS,

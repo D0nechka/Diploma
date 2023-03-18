@@ -1,0 +1,28 @@
+.musicCard {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-highlight);
+    border-radius: 15px;
+}
+
+.img {
+    align-self: center;
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.title {
+    color: var(--color-font-light);
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+.artist {
+    margin-top: 10px;
+    margin-left: 25px;
+    color: var(--color-font-gray)
+}
