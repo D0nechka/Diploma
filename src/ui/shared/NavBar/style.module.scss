@@ -1,0 +1,51 @@
+.navContainer{
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100VH;
+    background-color: var(--background-base);
+    position: relative;
+    display: inline-block;
+    align-items: center;
+}
+
+.logo{
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.quitBtnContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    
+}
+
+.quitBtn{
+    left: 10px;
+    width: 90%;
+}
+
+.profile{
+    left: 10px;
+    top: 30px;
+    background: var(--background-highlight);
+    position: relative;
+    width: 90%;
+    height: 75px;
+    border-radius: 10px;
+    gap: 30px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.userLogo{
+    color: var(--color-font-primary);
+    width: 50px;
+    height: 50px;
+}
