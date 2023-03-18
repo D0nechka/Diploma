@@ -1,0 +1,48 @@
+.links {
+    margin-top: 20px;
+}
+
+.linkTitle {
+    text-transform: uppercase;
+}
+
+.partLinks {
+    margin-top: 20px;
+}
+
+.link {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+
+    &:hover {
+        background: var(--background-highlight);
+    }
+}
+
+.linkActive {
+    background: var(--background-highlight);
+}
+
+.linkName {
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--color-font-primary);
+    font-size: var(--font-m);
+    position: absolute;
+    left: 50px;
+    transition: all 300ms ease-in;
+}
+
+.linkIcon {
+    color: var(--color-font-primary);
+    font-size: var(--font-xxl);
+}
+
+.linkNameHide {
+    opacity: 0;
+    transition: none;
+}

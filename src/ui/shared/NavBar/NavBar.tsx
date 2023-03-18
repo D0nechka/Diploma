@@ -1,54 +1,48 @@
+import { useAppDispatch, useAppSelector } from 'hooks';
+import { useEffect, useState } from 'react';
+import { changeNavbarHide, getNavbarHide } from 'store/slices/navbarSlice/navbarSlice';
+import { getUserRoles } from 'store/slices/userSlice/userSlice';
+import { Button } from 'ui/components/kit';
+import { HeaderNavbar, Links } from './components';
+import { adminLinks, userLinks } from './const';
 import cls from './style.module.scss';
-import { Button, ButtonSize, ButtonType, Text } from 'ui/components/kit';
-import { ImExit } from 'react-icons/im';
-import { Logo } from 'ui/components/icons';
-import { EMAIL_LOCALSTORAGE_KEY, ROLES_LOCALSTORAGE_KEY, USER_LOCALSTORAGE_KEY } from 'config/const/localStorage';
-import { changeUserEmail, getUserEmail, getUserRoles } from 'store/slices/userSlice/userSlice';
-import { useAppDispatch,useAppSelector } from 'hooks';
-import { FaUserAlt } from 'react-icons/fa';
+import { GlobalTypeLinks } from './types';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import classNames from 'classnames';
 
-export const NavBar = () => {
+export const Navbar = () => {
+    const [ currentLinks, setCurrentLinks ] = useState<GlobalTypeLinks | null>(null);
+
     const dispatch = useAppDispatch();
-    const email = useAppSelector(getUserEmail);
+
+    const isHide = useAppSelector(getNavbarHide);
     const roles = useAppSelector(getUserRoles);
+    const isAdmin = roles.includes('ADMIN');
 
-    const handleLogout = () => {
-        dispatch(changeUserEmail(''));
-        localStorage.removeItem(USER_LOCALSTORAGE_KEY);
-        localStorage.removeItem(EMAIL_LOCALSTORAGE_KEY);
-        localStorage.removeItem(ROLES_LOCALSTORAGE_KEY);
-        window.location.reload();
-    };
+    const onHideNavbar = () => dispatch(changeNavbarHide());
 
-    return(
-        <div className={cls.navContainer}>
-            <Logo className={cls.logo}/>
-            <div className={cls.profile}>
-                <div>
-                    <FaUserAlt className={cls.userLogo}/>
-                </div>
-                <Text >
-                    {roles?.map((item) => (
-                        <>
-                            <span
-                                key={item}
-                            >{item}</span>
-                            <br />
-                        </>
-                    ))}
-                    {email}
-                </Text>
+    useEffect(() => {
+        if(isAdmin) {
+            setCurrentLinks(adminLinks);
+        } else {
+            setCurrentLinks(userLinks);
+        }
+    }, [ roles, isAdmin ]);
+
+    console.log(Object.entries(currentLinks ?? {}));
+
+    return (
+        <div className={classNames(cls.navContainer, {
+            [cls.hideNavbar]: !isHide,
+        })}>
+            <div className={cls.wrapperContainer}>
+                <HeaderNavbar isHide={isHide} roles={roles} isAdmin={isAdmin} />
+                <Links isHide={isHide} currentLinks={currentLinks} />
             </div>
-            <div className={cls.quitBtnContainer}>
-                <Button
-                    btnType={ButtonType.OUTLINE}
-                    className={cls.quitBtn}
-                    btnSize={ButtonSize.L}
-                    onClick={handleLogout}
-                >
-                    <ImExit/>
-                </Button>
-            </div>
+            <Button
+                className={cls.hideBtn}
+                onClick={onHideNavbar}
+            >{isHide ? <AiOutlineArrowLeft /> : <AiOutlineArrowRight />}</Button>
         </div>
     );
 };
