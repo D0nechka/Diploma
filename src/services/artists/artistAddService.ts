@@ -6,13 +6,15 @@ interface GetData {
     id: number;
 }
 
-export const artistsGetService = createAsyncThunk<GetData[]>(
-    'artists/get',
-    async (_, thunkAPI) => {
+type Data = Pick<GetData, 'name'>
+
+export const artistsAddService = createAsyncThunk<GetData, Data>(
+    'artists/add',
+    async (data, thunkAPI) => {
         const { rejectWithValue, } = thunkAPI;
 
         try {
-            const response = await $api.get<GetData[]>('/artist/get');
+            const response = await $api.post<GetData>('/artist/add', data);
 
             if (!response.data) {
                 throw new Error();

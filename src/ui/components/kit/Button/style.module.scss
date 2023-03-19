@@ -40,3 +40,9 @@
     opacity: 0.5;
     cursor: default;
 }
+
+.error {
+    border-radius: 3px;
+    background: var(--color-font-negative);
+    color: var(--color-font-light);
+}

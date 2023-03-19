@@ -1,11 +1,13 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import { artistsReducer } from './artistsSlice/artistsSlice';
 import { counterReducer } from './counterSlice/counterSlice';
 import { loginReducer } from './loginSlice/loginSlice';
 import { musicReducer } from './musicSlice/musicSlice';
 import { navbarReducer } from './navbarSlice/navbarSlice';
 import { regReducer } from './regSlice/regSlice';
+import { rolesReducer } from './rolesSlice/rolesSlice';
 import { userReducer } from './userSlice/userSlice';
-import { artistsReducer } from './artistsSlice/artistsSlice';
+import { usersReducer } from './usersSlice/usersSlice';
 
 export const rootReducer = combineReducers({
     counter: counterReducer,
@@ -14,6 +16,8 @@ export const rootReducer = combineReducers({
     reg: regReducer,
     navbar: navbarReducer,
     music: musicReducer,
+    users: usersReducer,
+    roles: rolesReducer,
     artists: artistsReducer,
 });
 

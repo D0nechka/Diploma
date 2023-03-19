@@ -1,18 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { $api } from 'config/api/api';
+import { RolesState } from 'store/slices/rolesSlice/rolesSlice';
 
-interface GetData {
-    name: string;
-    id: number;
-}
-
-export const artistsGetService = createAsyncThunk<GetData[]>(
-    'artists/get',
+export const rolesGetService = createAsyncThunk<RolesState['roles']>(
+    'roles/get-all',
     async (_, thunkAPI) => {
         const { rejectWithValue, } = thunkAPI;
 
         try {
-            const response = await $api.get<GetData[]>('/artist/get');
+            const response = await $api.get<RolesState['roles']>('/roles/get-all');
 
             if (!response.data) {
                 throw new Error();

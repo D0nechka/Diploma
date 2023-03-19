@@ -20,6 +20,7 @@ interface InputProps extends HTMLInputProps {
    labelType?: TextType;
    onChange?: (value: string) => void;
    classNameContainer?: string;
+   ref?: React.LegacyRef<HTMLInputElement> | undefined
 }
 
 export const Input = (props: InputProps) => {

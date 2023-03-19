@@ -1,14 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'store';
-import { Artist } from './types';
 import { artistsGetService } from 'services/artists/artistsGetService';
+import { artistsAddService } from 'services/artists/artistAddService';
+import { Artist } from './types';
 
 export interface ArtistsState {
-    artists: Artist[];
-    error: string;
-    isError: boolean;
-    isLoading: boolean;
+  artists: {name: string; id: number;}[];
+  isError: boolean;
+  isLoading: boolean;
+  error: string;
 }
 
 const initialState: ArtistsState = {
@@ -40,6 +40,20 @@ export const artistsSlice = createSlice({
                 state.artists = action.payload;
             })
             .addCase(artistsGetService.rejected, (state, action) => {
+                state.isLoading = false;
+                state.isError = true;
+                state.error = (action?.payload || '') as string;
+            })
+            .addCase(artistsAddService.pending, (state) => {
+                state.error = '',
+                state.isError = false;
+                state.isLoading = true;
+            })
+            .addCase(artistsAddService.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.artists.push(action.payload);
+            })
+            .addCase(artistsAddService.rejected, (state, action) => {
                 state.isLoading = false;
                 state.isError = true;
                 state.error = (action?.payload || '') as string;

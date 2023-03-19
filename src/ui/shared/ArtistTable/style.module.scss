@@ -1,0 +1,28 @@
+.artistTable {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    padding-left: 20px;
+    width: 100%;
+    cursor: default;
+
+    &:hover {
+        background: var(--background-modal-wrapper-2);
+    }
+}
+
+.nameBlock {
+    align-items: center;
+    display: flex;
+    width: 25%;
+}
+
+.name {
+    font-size: var(--font-xl);
+    margin-left: 10px;
+}
+
+.iconArist {
+    color: var(--color-font-primary);
+    font-size: var(--font-xl);
+}

@@ -18,7 +18,7 @@ export const MusicCard = (props: MusicCardProps) => {
 
     return (
         <div className={cls.musicCard}>
-            <img src={`http://localhost:7777/${pathImg}`} className={cls.img} />
+            <img src={`${__API__}/${pathImg}`} className={cls.img} />
             <Text className={cls.title}>
                 {name}
             </Text>

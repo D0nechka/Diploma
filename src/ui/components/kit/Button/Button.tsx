@@ -4,7 +4,8 @@ import classNames from 'classnames';
 
 export enum ButtonType {
     PRIMARY = 'primary',
-    OUTLINE = 'outline'
+    OUTLINE = 'outline',
+    ERROR = 'error'
 }
 
 export enum ButtonSize {

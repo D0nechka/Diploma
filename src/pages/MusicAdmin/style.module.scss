@@ -1,0 +1,76 @@
+.musicAdmin {
+    flex: 1;
+    height: 100vh;
+    background: var(--background-highlight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.musicAdminWrapper {
+    background: var(--color-font-light);
+    height: 500px;
+    width: 500px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.title {
+    margin-top: 10px;
+    font-size: var(--font-xxxl);
+}
+
+.selectLabel {
+    margin-top: 40px;
+    align-self: flex-start;
+}
+
+.select {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.inputName {
+    width: 100%;
+}
+
+.inputNameContainer {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.inputImg {
+    display: none;
+}
+
+.inputMusic {
+    display: none;
+}
+
+.btnMusic {
+    align-self: flex-start;
+    margin-top: 5px;
+}
+
+.btnImg {
+    align-self: flex-start;
+    margin-top: 5px;
+}
+
+.textImg {
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.textMusic {
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.btnCreate {
+    width: 100%;
+    margin-top: auto;
+}

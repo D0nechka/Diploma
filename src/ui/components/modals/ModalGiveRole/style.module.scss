@@ -1,0 +1,62 @@
+.modalGiveRole {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 500px;
+    height: 250px;
+}
+
+.title {
+    font-size: var(--font-xxxl);
+    line-height: var(--font-5xl);
+}
+
+.blockInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.inputBan {
+    width: 100%;
+}
+
+.inputBanContainer {
+    margin-top: 20px;
+}
+
+.btnsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: auto;
+}
+
+.btnGiveRole {
+    margin-left: 20px;
+}
+
+.icon {
+    color: var(--color-font-primary);
+    font-size: var(--font-xl);
+}
+
+.modal {
+    background: var(--background-highlight);
+    z-index: 100;
+    opacity: 1;
+}
+
+.error {
+    color: var(--color-font-negative);
+    margin-top: 10px;
+    position: absolute;
+    top: 50px;
+}
+ 
+.select {
+    margin-top: 5px;
+}

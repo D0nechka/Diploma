@@ -1,18 +1,14 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { $api } from 'config/api/api';
+import { User } from 'store/slices/usersSlice/types';
 
-interface GetData {
-    name: string;
-    id: number;
-}
-
-export const artistsGetService = createAsyncThunk<GetData[]>(
-    'artists/get',
+export const usersGetService = createAsyncThunk<User[]>(
+    'users/get-all',
     async (_, thunkAPI) => {
         const { rejectWithValue, } = thunkAPI;
 
         try {
-            const response = await $api.get<GetData[]>('/artist/get');
+            const response = await $api.get<User[]>('/users/get-all');
 
             if (!response.data) {
                 throw new Error();

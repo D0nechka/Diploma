@@ -1,0 +1,37 @@
+.users {
+    flex: 1;
+    background: var(--background-highlight);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.usersContainer {
+    width: 90%;
+    background: var(--background-modal-wrapper);
+    max-height: 500px;
+    overflow: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.headerTable {
+    width: 100%;
+    background: var(--background-modal-wrapper-2);
+    height: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.titleTable {
+    width: 25%;
+    font-size: var(--font-xxl);
+}
+
+.bodyTable {
+    display: flex;
+    flex-direction: column;
+}

@@ -2,23 +2,23 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { $api } from 'config/api/api';
 
 interface GetData {
-    name: string;
-    id: number;
+    email: string;
+    reason: string;
 }
 
-export const artistsGetService = createAsyncThunk<GetData[]>(
-    'artists/get',
-    async (_, thunkAPI) => {
+export const usersBanService = createAsyncThunk<GetData, GetData>(
+    'users/ban',
+    async (data, thunkAPI) => {
         const { rejectWithValue, } = thunkAPI;
 
         try {
-            const response = await $api.get<GetData[]>('/artist/get');
+            const response = await $api.post('/users/ban', data);
 
             if (!response.data) {
                 throw new Error();
             }
 
-            return response.data;
+            return data;
         } catch(e: any) {
             return rejectWithValue(e.response.data.message || e.response.data[0]);
         }
