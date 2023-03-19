@@ -1,0 +1,11 @@
+.music {
+    background-color: var(--background-modal);
+    height: 100vh;
+    flex: 1;
+    padding: 30px;
+}
+
+.cardWrapper {
+    display: flex;
+    flex-wrap: wrap;
+}

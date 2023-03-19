@@ -1,7 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'store';
 import { artistsGetService } from 'services/artists/artistsGetService';
 import { artistsAddService } from 'services/artists/artistAddService';
+import { Artist } from './types';
 
 export interface ArtistsState {
   artists: {name: string; id: number;}[];
@@ -12,15 +13,20 @@ export interface ArtistsState {
 
 const initialState: ArtistsState = {
     artists: [],
+    error: '',
     isError: false,
     isLoading: false,
-    error: '',
 };
 
 export const artistsSlice = createSlice({
     name: 'artists',
     initialState,
     reducers: {
+        changeArtists: (state, action: PayloadAction<Artist[]>) => {
+            const { payload, } = action;
+
+            state.artists = payload;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -55,9 +61,11 @@ export const artistsSlice = createSlice({
     },
 });
 
+export const { changeArtists, } = artistsSlice.actions;
+
+export const getArtistsInfo = (state: RootState) => state.artists.artists;
 export const getArtistsIsError = (state: RootState) => state.artists.isError;
 export const getArtistsIsLoading = (state: RootState) => state.artists.isLoading;
 export const getArtistsError = (state: RootState) => state.artists.error;
-export const getArtists = (state: RootState) => state.artists.artists;
 
 export const artistsReducer = artistsSlice.reducer;

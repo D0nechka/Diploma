@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from 'hooks';
 import { useEffect, useRef, useState } from 'react';
 import Select, { SingleValue } from 'react-select';
 import { artistsGetService } from 'services/artists/artistsGetService';
-import { getArtists } from 'store/slices/artistsSlice/artistsSlice';
+import { getArtistsInfo } from 'store/slices/artistsSlice/artistsSlice';
 import { Input, Text, InputType, Button, ButtonType } from 'ui/components/kit';
 import cls from './style.module.scss';
 
@@ -13,16 +13,16 @@ const MusicAdmin = () => {
     const refMusic = useRef<HTMLInputElement | null>(null);
 
     const dispatch = useAppDispatch();
-    const artists = useAppSelector(getArtists);
+    const artists = useAppSelector(getArtistsInfo);
 
     const handleChangeArtist = (newValue: SingleValue<any>) => {
         setCurrentArtist(newValue);
     };
 
-    const chooseImg = (e?: React.MouseEvent<HTMLButtonElement>) => {
+    const chooseImg = () => {
         refImg.current?.click();
     };
-    const chooseMusic = (e?: React.MouseEvent<HTMLButtonElement>) => {
+    const chooseMusic = () => {
         refMusic.current?.click();
     };
 

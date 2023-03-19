@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from 'hooks';
 import { useEffect, useState } from 'react';
 import { artistsGetService } from 'services/artists/artistsGetService';
-import { getArtists, getArtistsIsLoading } from 'store/slices/artistsSlice/artistsSlice';
+import { getArtistsInfo, getArtistsIsLoading } from 'store/slices/artistsSlice/artistsSlice';
 import { Button, Text, ButtonType } from 'ui/components/kit';
 import { ModalAddArtist } from 'ui/components/modals';
 import { ArtistTable } from 'ui/shared';
@@ -10,7 +10,7 @@ import cls from './style.module.scss';
 const AdminArtists = () => {
     const [ isOpen, setIsOpen ] = useState(false);
 
-    const artists = useAppSelector(getArtists);
+    const artists = useAppSelector(getArtistsInfo);
     const isLoading = useAppSelector(getArtistsIsLoading);
     const dispatch = useAppDispatch();
 

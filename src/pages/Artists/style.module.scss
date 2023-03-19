@@ -1,0 +1,15 @@
+.artists {
+    background-color: var(--background-modal);
+    height: 100vh;
+    flex: 1;
+    padding: 30px;
+}
+
+.title {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid green;
+    border-radius: 50px;
+}
+
