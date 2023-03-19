@@ -13,18 +13,18 @@ const Music = () => {
         dispatch(musicGetService());
     }, []);
 
-    console.log(tracks, 'tracks');
-
     return (
         <div className={cls.music}>
-            {tracks.map((track) => (
-                <MusicCard
-                    key={track.id}
-                    pathImg={track.imagePath}
-                    name={track.name}
-                    artistName={track.artist.name}
-                />
-            ))}
+            <div className={cls.cardWrapper}>
+                {tracks.map((track) => (
+                    <MusicCard
+                        key={track.id}
+                        pathImg={track.imagePath}
+                        name={track.name}
+                        artistName={track.artist.name}
+                    />
+                ))}
+            </div>
         </div>
     );
 };

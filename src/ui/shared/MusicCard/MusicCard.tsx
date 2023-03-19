@@ -1,5 +1,6 @@
 import { __API__ } from 'config/const/api';
-import { Text } from '../Text/Text';
+import { Button } from 'ui/components/kit';
+import { Text } from '../../components/kit/Text/Text';
 import cls from './style.module.scss';
 
 interface MusicCardProps {
@@ -24,6 +25,9 @@ export const MusicCard = (props: MusicCardProps) => {
             <Text className={cls.artist}>
                 {artistName}
             </Text>
+            <Button className={cls.play}>
+                play
+            </Button>
         </div>
     );
 };

@@ -1,0 +1,23 @@
+.artistCard {
+    padding-right: 10px;
+    margin-top: 10px;
+    background: var(--background-modal);
+    border-radius: 5px;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid green;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+.logo {
+    margin-left: 10px;
+    font-size: 30px;
+    color: var(--color-font-primary);
+}
+
+

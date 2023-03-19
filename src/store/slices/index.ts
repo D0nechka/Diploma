@@ -5,6 +5,7 @@ import { musicReducer } from './musicSlice/musicSlice';
 import { navbarReducer } from './navbarSlice/navbarSlice';
 import { regReducer } from './regSlice/regSlice';
 import { userReducer } from './userSlice/userSlice';
+import { artistsReducer } from './artistsSlice/artistsSlice';
 
 export const rootReducer = combineReducers({
     counter: counterReducer,
@@ -13,6 +14,7 @@ export const rootReducer = combineReducers({
     reg: regReducer,
     navbar: navbarReducer,
     music: musicReducer,
+    artists: artistsReducer,
 });
 
 export * from './counterSlice/counterSlice';
