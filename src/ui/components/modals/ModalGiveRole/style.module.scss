@@ -4,11 +4,12 @@
     flex-direction: column;
     padding: 20px;
     width: 500px;
-    height: 220px;
+    height: 250px;
 }
 
 .title {
     font-size: var(--font-xxxl);
+    line-height: var(--font-5xl);
 }
 
 .blockInput {
@@ -57,5 +58,5 @@
 }
  
 .select {
-    margin-top: 20px;
+    margin-top: 5px;
 }

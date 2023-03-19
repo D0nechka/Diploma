@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from 'hooks';
 import { useEffect, useState } from 'react';
 import { usersGetService } from 'services/users/userGetService';
 import { User } from 'store/slices/usersSlice/types';
-import { getUsers } from 'store/slices/usersSlice/usersSlice';
+import { getUsers, getUsersIsLoading } from 'store/slices/usersSlice/usersSlice';
 import { Text } from 'ui/components/kit';
 import { ModalBan, ModalGiveRole } from 'ui/components/modals';
 import { UserTable } from 'ui/shared';
@@ -16,6 +16,7 @@ const Users = () => {
     const [ selectedEmail, setSelectedId ] = useState<string | null>(null);
 
     const users = useAppSelector(getUsers);
+    const isLoading = useAppSelector(getUsersIsLoading);
     const dispatch = useAppDispatch();
 
     const handleOpenBanModal = (id: string) => {
@@ -64,7 +65,7 @@ const Users = () => {
                         >{title}</Text>
                     ))}
                 </div>
-                <div className={cls.bodyTable}>
+                {isLoading ? <div>Loding...</div> : <div className={cls.bodyTable}>
                     {users.map((user) => (
                         <UserTable
                             key={user.id}
@@ -76,7 +77,7 @@ const Users = () => {
                             handleOpenSelectedModal={handleOpenSelectedModal}
                         />
                     ))}
-                </div>
+                </div>}
             </div>
         </div>
     );
