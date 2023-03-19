@@ -1,0 +1,77 @@
+.userTable {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    padding-left: 20px;
+    width: 100%;
+    cursor: default;
+
+    &:hover {
+        background: var(--background-modal-wrapper-2);
+    }
+}
+
+.emailBlock {
+    align-items: center;
+    display: flex;
+    width: 25%;
+}
+
+.email {
+    font-size: var(--font-xl);
+    margin-left: 10px;
+}
+
+.iconUser {
+    color: var(--color-font-primary);
+    font-size: var(--font-xl);
+}
+
+.roles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+}
+
+.role {
+    font-size: var(--font-xl);
+    margin-right: 10px;
+}
+
+.banned {
+    position: relative;
+    width: 25%;
+}
+
+.isBanned {
+    cursor: help;
+}
+
+.bannedText {
+    font-size: var(--font-xl);
+}
+
+.tooltip {
+    position: absolute;
+    background: var(--background-base);
+    border-radius: 15px;
+    top: -40px;
+    padding: 10px;
+    opacity: 0;
+}
+
+.actions {
+    display: flex;
+    width: 25%;
+    position: relative;
+}
+
+.giveRole {
+    margin-left: 10px;
+    position: absolute;
+    left: 100px;
+}
+
+.showTooltip {
+    opacity: 1;
+}
