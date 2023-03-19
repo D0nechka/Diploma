@@ -9,7 +9,7 @@ import { getUsersIsLoading } from 'store/slices/usersSlice/usersSlice';
 import { usersUnBanService } from 'services/users/usersUnBanService';
 import { toast } from 'react-toastify';
 
-interface UserTable {
+interface UserTableProps {
     email: string;
     banned: boolean;
     banReason: string | null;
@@ -18,8 +18,7 @@ interface UserTable {
     handleOpenSelectedModal: (id: string, roles: User['roles']) => void;
 }
 
-// eslint-disable-next-line
-export const UserTable = (props: UserTable) => {
+export const UserTable = (props: UserTableProps) => {
     const {
         email,
         banned,
