@@ -19,9 +19,7 @@ const Music = () => {
                 {tracks.map((track) => (
                     <MusicCard
                         key={track.id}
-                        pathImg={track.imagePath}
-                        name={track.name}
-                        artistName={track.artist.name}
+                        track={track}
                     />
                 ))}
             </div>

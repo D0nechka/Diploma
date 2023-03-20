@@ -3,7 +3,7 @@ import { Router } from 'config/router';
 import { useAppDispatch } from 'hooks';
 import { useEffect } from 'react';
 import { changeUserEmail, changeUserRoles } from 'store/slices/userSlice/userSlice';
-import { Navbar } from 'ui/shared';
+import { Navbar, PrimaryPlayer } from 'ui/shared';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 
@@ -21,6 +21,7 @@ export const App = () => {
     return (
         <div className='app'>
             {localStorage.getItem(USER_LOCALSTORAGE_KEY) && <Navbar />}
+            {localStorage.getItem(USER_LOCALSTORAGE_KEY) && <PrimaryPlayer />}
             <Router />
             <ToastContainer />
         </div>

@@ -3,6 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'store';
 import { Track } from './types';
 import { musicGetService } from 'services/music/musicGetService';
+import { musicAddService } from 'services/music/musicAddService';
 
 export interface MusicState {
   tracks: Track[];
@@ -40,6 +41,20 @@ export const musicSlice = createSlice({
                 state.tracks = action.payload;
             })
             .addCase(musicGetService.rejected, (state, action) => {
+                state.isLoading = false;
+                state.isError = true;
+                state.error = (action?.payload || '') as string;
+            })
+            .addCase(musicAddService.pending, (state) => {
+                state.error = '',
+                state.isError = false;
+                state.isLoading = true;
+            })
+            .addCase(musicAddService.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.tracks.push(action.payload);
+            })
+            .addCase(musicAddService.rejected, (state, action) => {
                 state.isLoading = false;
                 state.isError = true;
                 state.error = (action?.payload || '') as string;
