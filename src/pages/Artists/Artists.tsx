@@ -14,8 +14,6 @@ const Artists = () => {
         dispatch(artistsGetService());
     }, []);
 
-    console.log(artists, 'artists');
-
     return (
         <div className={cls.artists}>
             <Text

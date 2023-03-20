@@ -90,8 +90,6 @@ export const usersSlice = createSlice({
                 state.isLoading = true;
             })
             .addCase(usersGiveRoleService.fulfilled, (state, action) => {
-
-                console.log(action, 'action');
                 state.isLoading = false;
                 state.users = state.users.map((user) => {
                     if(user.email === action.payload.email) {
