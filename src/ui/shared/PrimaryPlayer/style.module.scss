@@ -1,0 +1,162 @@
+.primaryPlayer {
+    position: absolute;
+    width: calc(100% - 280px);
+    height: 80px;
+    right: 0;
+    background: var(--background-elevated-base);
+    bottom: 0;
+    transition: width 100ms;
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+}
+
+.hide {
+    width: calc(100% - 80px);
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    position: absolute;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.trackName {
+    font-size: var(--font-l);
+}
+
+.artistName {
+    font-size: var(--font-m);
+    color: var(--color-font-dark-primary);
+}
+
+.infoText {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.duration {
+    width: 1000px;
+}
+
+.containerDuration {
+    width: 1000px;
+    margin-left: 40px;
+    position: relative;
+    margin-left: 235px;
+}
+
+.durationText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.duration[type="range"]::-webkit-slider-runnable-track {
+    background: var(--color-font-primary);
+    height: 0.5rem;
+    border-radius: 5px;
+}
+
+.duration[type="range"]::-webkit-slider-thumb {
+    opacity: 0;
+}
+
+.dumb {
+    position: absolute;
+    background: var(--color-font-dark-primary);
+    left: 0px;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    top: 23px;
+
+    &:hover {
+        .textDumb {
+            opacity: 1;
+            display: block;
+        }
+    }
+}
+
+.textDumb {
+    position: absolute;
+    bottom: -20px;
+    opacity: 0;
+    display: none;
+    left: -10px;
+}
+
+.volume {
+    width: 200px;
+    transform: rotate(270deg);
+}
+
+.containerVolume {
+    position: absolute;
+    right: -70px;
+    bottom: 150px;
+}
+
+.volume[type="range"]::-webkit-slider-runnable-track {
+    background: var(--color-font-primary);
+    height: 0.5rem;
+    border-radius: 5px;
+}
+
+.volume[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -4px;
+    color: red;
+    filter: red;
+}
+
+.volumeBtn {
+    background: none;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.volumeIcon {
+    color: var(--color-font-primary);
+    font-size: var(--font-5xl);
+}
+
+.playBtn {
+    background: none;
+}
+
+.btnsContainer {
+    position: absolute;
+    right: 50%;
+    top: 0px;
+    display: flex;
+}
+
+.playIcon {
+    font-size: var(--font-xxxl);
+    color: var(--color-font-primary);
+}
+
+.repeatIcon {
+    font-size: var(--font-xxxl);
+    color: var(--color-font-primary);
+    opacity: .5;
+}
+
+.repeat {
+    opacity: 1;
+}
+
+.volumeContainer {
+    position: relative;
+}

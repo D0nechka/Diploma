@@ -26,8 +26,6 @@ export const registrationService = createAsyncThunk<ReturnAuthData, AuthData>(
                 throw new Error();
             }
 
-            console.log(response.data, 'response');
-
             localStorage.setItem(USER_LOCALSTORAGE_KEY, response.data.token.token);
             localStorage.setItem(EMAIL_LOCALSTORAGE_KEY, authData.email);
             localStorage.setItem(ROLES_LOCALSTORAGE_KEY, JSON.stringify(response.data.roles));
