@@ -36,10 +36,6 @@ export const PrimaryPlayer = () => {
     const [ repeat, setRepeat ] = useState(false);
     const [ changedDuration, setChangedDuration ] = useState(0);
 
-    if(!track) {
-        return null;
-    }
-
     audio.onloadedmetadata = () => {
         setChangedDuration(audio.currentTime);
         dispatch(changeDuration(Math.floor(audio.duration)));
@@ -83,6 +79,12 @@ export const PrimaryPlayer = () => {
         dispatch(handleTrackPrev(tracks));
     };
 
+    const changedCalculateDuration = calculateDurationTrack(changedDuration);
+
+    if(!track) {
+        return null;
+    }
+
     return (
         <div className={classNames(cls.primaryPlayer, {
             [cls.hide]: !isHide,
@@ -118,7 +120,7 @@ export const PrimaryPlayer = () => {
             </div>
             <div className={cls.containerDuration}>
                 <div className={cls.durationText}>
-                    <Text className={cls.left}>0:00</Text>
+                    <Text className={cls.left}>{changedCalculateDuration}</Text>
                     <Text className={cls.right}>{calculateDurationTrack(duration)}</Text>
                 </div>
                 <input
@@ -134,7 +136,7 @@ export const PrimaryPlayer = () => {
                         left: `${Math.floor((990 / duration) * changedDuration)}px`,
                     }}
                 >
-                    <Text className={cls.textDumb}>{calculateDurationTrack(changedDuration)}</Text>
+                    <Text className={cls.textDumb}>{changedCalculateDuration}</Text>
                 </div>
             </div>
             <div className={cls.volumeContainer}>

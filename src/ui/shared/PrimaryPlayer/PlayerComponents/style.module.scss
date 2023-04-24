@@ -8,14 +8,12 @@
     transition: width 100ms;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .img {
     height: 50px;
     width: 50px;
     border-radius: 20px;
-
 }
 
 .hide {
@@ -29,7 +27,6 @@
     position: absolute;
     max-width: 200px;
     overflow: hidden;
-    left: 0;
 }
 
 .trackName {
@@ -53,7 +50,9 @@
 
 .containerDuration {
     width: 1000px;
+    margin-left: 40px;
     position: relative;
+    margin-left: 235px;
 }
 
 .durationText {
@@ -138,6 +137,7 @@
 
 .btnsContainer {
     position: absolute;
+    right: 50%;
     top: 0px;
     display: flex;
 }

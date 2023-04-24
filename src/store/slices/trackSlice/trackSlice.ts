@@ -28,11 +28,10 @@ export const trackSlice = createSlice({
             state.trackInfo = action.payload;
             const newPath = `${__API__}/${action.payload.audioPath}`;
 
-            if ( state.track.src !== newPath) {
+            if ( state.track.src !== newPath ) {
                 state.track.src = newPath;
                 state.track.volume = state.volume;
             }
-
         },
         onPlayTrack: (state) => {
             state.play = true;
@@ -43,22 +42,22 @@ export const trackSlice = createSlice({
             state.track.pause();
         },
         changeTrackDuration: (state, action: PayloadAction<number>) => {
-            if ( state.track.src) {
+            if ( state.track.src ) {
                 state.track.currentTime = action.payload;
             }
 
-            if(action.payload === Math.floor(state.track.duration)){
+            if ( action.payload === Math.floor(state.track.duration) ) {
                 state.track.currentTime = 0;
             }
         },
         changeTrackVolume: (state, action: PayloadAction<number>) => {
-            if ( state.track.src) {
+            if ( state.track.src ) {
                 state.track.volume = action.payload;
                 state.volume = action.payload;
             }
         },
         changeDuration: (state, action: PayloadAction<number>) => {
-            if ( state.track.src) {
+            if ( state.track.src ) {
                 state.duration = action.payload;
             }
         },
@@ -67,20 +66,17 @@ export const trackSlice = createSlice({
             let currentTrack: null | Track = null;
             let newPath = '';
 
-            if(currentIndex !== action.payload.length - 1){
+            if ( currentIndex !== action.payload.length - 1 ) {
                 currentTrack = action.payload[currentIndex + 1];
-                state.duration = 0;
-                newPath = `${__API__}/${currentTrack.audioPath}`;
-
             } else {
                 currentTrack = action.payload[0];
-                state.duration = 0;
-                newPath = `${__API__}/${currentTrack.audioPath}`;
             }
 
+            state.duration = 0;
+            newPath = `${__API__}/${currentTrack.audioPath}`;
             state.trackInfo = currentTrack;
             state.track.src = newPath;
-            if(state.play){
+            if ( state.play ) {
                 state.track.play();
             }
         },
@@ -89,20 +85,17 @@ export const trackSlice = createSlice({
             let currentTrack: null | Track = null;
             let newPath = '';
 
-            if(currentIndex === 0){
+            if ( currentIndex === 0 ) {
                 currentTrack = action.payload[action.payload.length - 1];
-                state.duration = 0;
-                newPath = `${__API__}/${currentTrack.audioPath}`;
-
             } else {
                 currentTrack = action.payload[currentIndex - 1];
-                state.duration = 0;
-                newPath = `${__API__}/${currentTrack.audioPath}`;
             }
 
+            newPath = `${__API__}/${currentTrack.audioPath}`;
+            state.duration = 0;
             state.trackInfo = currentTrack;
             state.track.src = newPath;
-            if(state.play){
+            if ( state.play ) {
                 state.track.play();
             }
         },

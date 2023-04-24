@@ -1,0 +1,17 @@
+.skeletonCard {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background: var(--background-highlight);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    transition: 300ms;
+    position: relative;
+}
+
+// .content {
+//     height:100%;
+//     width: 100%;
+// }
